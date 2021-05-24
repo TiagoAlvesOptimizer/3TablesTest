@@ -1,0 +1,311 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="main.jsf" id="d1">
+        <af:messages id="m1"/>
+        <af:form id="f1">
+            <af:panelTabbed position="above" id="pt1">
+                <af:showDetailItem id="customers" text="Customers">
+                    <af:table value="#{bindings.CustomersView1.collectionModel}" var="row"
+                              rows="#{bindings.CustomersView1.rangeSize}"
+                              emptyText="#{bindings.CustomersView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                              rowBandingInterval="0"
+                              selectedRowKeys="#{bindings.CustomersView1.collectionModel.selectedRow}"
+                              selectionListener="#{bindings.CustomersView1.collectionModel.makeCurrent}"
+                              rowSelection="single" fetchSize="#{bindings.CustomersView1.rangeSize}"
+                              filterModel="#{bindings.CustomersView1Query.queryDescriptor}" filterVisible="true"
+                              queryListener="#{bindings.CustomersView1Query.processQuery}" varStatus="vs" id="t1">
+                        <af:column sortProperty="#{bindings.CustomersView1.hints.CustomerId.name}" filterable="true"
+                                   sortable="true" headerText="#{bindings.CustomersView1.hints.CustomerId.label}"
+                                   id="c1">
+                            <af:inputText value="#{row.bindings.CustomerId.inputValue}"
+                                          label="#{bindings.CustomersView1.hints.CustomerId.label}"
+                                          required="#{bindings.CustomersView1.hints.CustomerId.mandatory}"
+                                          columns="#{bindings.CustomersView1.hints.CustomerId.displayWidth}"
+                                          maximumLength="#{bindings.CustomersView1.hints.CustomerId.precision}"
+                                          shortDesc="#{bindings.CustomersView1.hints.CustomerId.tooltip}" id="it1">
+                                <f:validator binding="#{row.bindings.CustomerId.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.CustomersView1.hints.CustomerId.format}"/>
+                            </af:inputText>
+                        </af:column>
+                        <af:column sortProperty="#{bindings.CustomersView1.hints.CustFirstName.name}" filterable="true"
+                                   sortable="true" headerText="#{bindings.CustomersView1.hints.CustFirstName.label}"
+                                   id="c2">
+                            <af:inputText value="#{row.bindings.CustFirstName.inputValue}"
+                                          label="#{bindings.CustomersView1.hints.CustFirstName.label}"
+                                          required="#{bindings.CustomersView1.hints.CustFirstName.mandatory}"
+                                          columns="#{bindings.CustomersView1.hints.CustFirstName.displayWidth}"
+                                          maximumLength="#{bindings.CustomersView1.hints.CustFirstName.precision}"
+                                          shortDesc="#{bindings.CustomersView1.hints.CustFirstName.tooltip}" id="it2">
+                                <f:validator binding="#{row.bindings.CustFirstName.validator}"/>
+                            </af:inputText>
+                        </af:column>
+                        <af:column sortProperty="#{bindings.CustomersView1.hints.CustLastName.name}" filterable="true"
+                                   sortable="true" headerText="#{bindings.CustomersView1.hints.CustLastName.label}"
+                                   id="c3">
+                            <af:inputText value="#{row.bindings.CustLastName.inputValue}"
+                                          label="#{bindings.CustomersView1.hints.CustLastName.label}"
+                                          required="#{bindings.CustomersView1.hints.CustLastName.mandatory}"
+                                          columns="#{bindings.CustomersView1.hints.CustLastName.displayWidth}"
+                                          maximumLength="#{bindings.CustomersView1.hints.CustLastName.precision}"
+                                          shortDesc="#{bindings.CustomersView1.hints.CustLastName.tooltip}" id="it3">
+                                <f:validator binding="#{row.bindings.CustLastName.validator}"/>
+                            </af:inputText>
+                        </af:column>
+                        <af:column sortProperty="#{bindings.CustomersView1.hints.PhoneNumbers.name}" filterable="true"
+                                   sortable="true" headerText="#{bindings.CustomersView1.hints.PhoneNumbers.label}"
+                                   id="c4">
+                            <af:inputText value="#{row.bindings.PhoneNumbers.inputValue}"
+                                          label="#{bindings.CustomersView1.hints.PhoneNumbers.label}"
+                                          required="#{bindings.CustomersView1.hints.PhoneNumbers.mandatory}"
+                                          columns="#{bindings.CustomersView1.hints.PhoneNumbers.displayWidth}"
+                                          maximumLength="#{bindings.CustomersView1.hints.PhoneNumbers.precision}"
+                                          shortDesc="#{bindings.CustomersView1.hints.PhoneNumbers.tooltip}" id="it4">
+                                <f:validator binding="#{row.bindings.PhoneNumbers.validator}"/>
+                            </af:inputText>
+                        </af:column>
+                        <af:column sortProperty="#{bindings.CustomersView1.hints.NlsLanguage.name}" filterable="true"
+                                   sortable="true" headerText="#{bindings.CustomersView1.hints.NlsLanguage.label}"
+                                   id="c5">
+                            <af:inputText value="#{row.bindings.NlsLanguage.inputValue}"
+                                          label="#{bindings.CustomersView1.hints.NlsLanguage.label}"
+                                          required="#{bindings.CustomersView1.hints.NlsLanguage.mandatory}"
+                                          columns="#{bindings.CustomersView1.hints.NlsLanguage.displayWidth}"
+                                          maximumLength="#{bindings.CustomersView1.hints.NlsLanguage.precision}"
+                                          shortDesc="#{bindings.CustomersView1.hints.NlsLanguage.tooltip}" id="it5">
+                                <f:validator binding="#{row.bindings.NlsLanguage.validator}"/>
+                            </af:inputText>
+                        </af:column>
+                        <af:column sortProperty="#{bindings.CustomersView1.hints.NlsTerritory.name}" filterable="true"
+                                   sortable="true" headerText="#{bindings.CustomersView1.hints.NlsTerritory.label}"
+                                   id="c6">
+                            <af:inputText value="#{row.bindings.NlsTerritory.inputValue}"
+                                          label="#{bindings.CustomersView1.hints.NlsTerritory.label}"
+                                          required="#{bindings.CustomersView1.hints.NlsTerritory.mandatory}"
+                                          columns="#{bindings.CustomersView1.hints.NlsTerritory.displayWidth}"
+                                          maximumLength="#{bindings.CustomersView1.hints.NlsTerritory.precision}"
+                                          shortDesc="#{bindings.CustomersView1.hints.NlsTerritory.tooltip}" id="it6">
+                                <f:validator binding="#{row.bindings.NlsTerritory.validator}"/>
+                            </af:inputText>
+                        </af:column>
+                        <af:column sortProperty="#{bindings.CustomersView1.hints.CreditLimit.name}" filterable="true"
+                                   sortable="true" headerText="#{bindings.CustomersView1.hints.CreditLimit.label}"
+                                   id="c7">
+                            <af:inputText value="#{row.bindings.CreditLimit.inputValue}"
+                                          label="#{bindings.CustomersView1.hints.CreditLimit.label}"
+                                          required="#{bindings.CustomersView1.hints.CreditLimit.mandatory}"
+                                          columns="#{bindings.CustomersView1.hints.CreditLimit.displayWidth}"
+                                          maximumLength="#{bindings.CustomersView1.hints.CreditLimit.precision}"
+                                          shortDesc="#{bindings.CustomersView1.hints.CreditLimit.tooltip}" id="it7">
+                                <f:validator binding="#{row.bindings.CreditLimit.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.CustomersView1.hints.CreditLimit.format}"/>
+                            </af:inputText>
+                        </af:column>
+                        <af:column sortProperty="#{bindings.CustomersView1.hints.CustEmail.name}" filterable="true"
+                                   sortable="true" headerText="#{bindings.CustomersView1.hints.CustEmail.label}"
+                                   id="c8">
+                            <af:inputText value="#{row.bindings.CustEmail.inputValue}"
+                                          label="#{bindings.CustomersView1.hints.CustEmail.label}"
+                                          required="#{bindings.CustomersView1.hints.CustEmail.mandatory}"
+                                          columns="#{bindings.CustomersView1.hints.CustEmail.displayWidth}"
+                                          maximumLength="#{bindings.CustomersView1.hints.CustEmail.precision}"
+                                          shortDesc="#{bindings.CustomersView1.hints.CustEmail.tooltip}" id="it8">
+                                <f:validator binding="#{row.bindings.CustEmail.validator}"/>
+                            </af:inputText>
+                        </af:column>
+                        <af:column sortProperty="#{bindings.CustomersView1.hints.AccountMgrId.name}" filterable="true"
+                                   sortable="true" headerText="#{bindings.CustomersView1.hints.AccountMgrId.label}"
+                                   id="c9">
+                            <af:inputText value="#{row.bindings.AccountMgrId.inputValue}"
+                                          label="#{bindings.CustomersView1.hints.AccountMgrId.label}"
+                                          required="#{bindings.CustomersView1.hints.AccountMgrId.mandatory}"
+                                          columns="#{bindings.CustomersView1.hints.AccountMgrId.displayWidth}"
+                                          maximumLength="#{bindings.CustomersView1.hints.AccountMgrId.precision}"
+                                          shortDesc="#{bindings.CustomersView1.hints.AccountMgrId.tooltip}" id="it9">
+                                <f:validator binding="#{row.bindings.AccountMgrId.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.CustomersView1.hints.AccountMgrId.format}"/>
+                            </af:inputText>
+                        </af:column>
+                        <af:column sortProperty="#{bindings.CustomersView1.hints.CustAddress.StreetAddress.name}"
+                                   filterable="true" sortable="true"
+                                   headerText="#{bindings.CustomersView1.hints.CustAddress.StreetAddress.label}"
+                                   id="c10">
+                            <af:inputText value="#{row.CustAddress.bindings.StreetAddress.inputValue}"
+                                          label="#{bindings.CustomersView1.hints.CustAddress.StreetAddress.label}"
+                                          required="#{bindings.CustomersView1.hints.CustAddress.StreetAddress.mandatory}"
+                                          columns="#{bindings.CustomersView1.hints.CustAddress.StreetAddress.displayWidth}"
+                                          maximumLength="#{bindings.CustomersView1.hints.CustAddress.StreetAddress.precision}"
+                                          shortDesc="#{bindings.CustomersView1.hints.CustAddress.StreetAddress.tooltip}"
+                                          rendered="#{row.CustAddress != null}" id="it10">
+                                <f:validator binding="#{row.CustAddress.bindings.StreetAddress.validator}"/>
+                            </af:inputText>
+                        </af:column>
+                        <af:column sortProperty="#{bindings.CustomersView1.hints.CustAddress.PostalCode.name}"
+                                   filterable="true" sortable="true"
+                                   headerText="#{bindings.CustomersView1.hints.CustAddress.PostalCode.label}" id="c11">
+                            <af:inputText value="#{row.CustAddress.bindings.PostalCode.inputValue}"
+                                          label="#{bindings.CustomersView1.hints.CustAddress.PostalCode.label}"
+                                          required="#{bindings.CustomersView1.hints.CustAddress.PostalCode.mandatory}"
+                                          columns="#{bindings.CustomersView1.hints.CustAddress.PostalCode.displayWidth}"
+                                          maximumLength="#{bindings.CustomersView1.hints.CustAddress.PostalCode.precision}"
+                                          shortDesc="#{bindings.CustomersView1.hints.CustAddress.PostalCode.tooltip}"
+                                          rendered="#{row.CustAddress != null}" id="it11">
+                                <f:validator binding="#{row.CustAddress.bindings.PostalCode.validator}"/>
+                            </af:inputText>
+                        </af:column>
+                        <af:column sortProperty="#{bindings.CustomersView1.hints.CustAddress.City.name}"
+                                   filterable="true" sortable="true"
+                                   headerText="#{bindings.CustomersView1.hints.CustAddress.City.label}" id="c12">
+                            <af:inputText value="#{row.CustAddress.bindings.City.inputValue}"
+                                          label="#{bindings.CustomersView1.hints.CustAddress.City.label}"
+                                          required="#{bindings.CustomersView1.hints.CustAddress.City.mandatory}"
+                                          columns="#{bindings.CustomersView1.hints.CustAddress.City.displayWidth}"
+                                          maximumLength="#{bindings.CustomersView1.hints.CustAddress.City.precision}"
+                                          shortDesc="#{bindings.CustomersView1.hints.CustAddress.City.tooltip}"
+                                          rendered="#{row.CustAddress != null}" id="it12">
+                                <f:validator binding="#{row.CustAddress.bindings.City.validator}"/>
+                            </af:inputText>
+                        </af:column>
+                        <af:column sortProperty="#{bindings.CustomersView1.hints.CustAddress.StateProvince.name}"
+                                   filterable="true" sortable="true"
+                                   headerText="#{bindings.CustomersView1.hints.CustAddress.StateProvince.label}"
+                                   id="c13">
+                            <af:inputText value="#{row.CustAddress.bindings.StateProvince.inputValue}"
+                                          label="#{bindings.CustomersView1.hints.CustAddress.StateProvince.label}"
+                                          required="#{bindings.CustomersView1.hints.CustAddress.StateProvince.mandatory}"
+                                          columns="#{bindings.CustomersView1.hints.CustAddress.StateProvince.displayWidth}"
+                                          maximumLength="#{bindings.CustomersView1.hints.CustAddress.StateProvince.precision}"
+                                          shortDesc="#{bindings.CustomersView1.hints.CustAddress.StateProvince.tooltip}"
+                                          rendered="#{row.CustAddress != null}" id="it13">
+                                <f:validator binding="#{row.CustAddress.bindings.StateProvince.validator}"/>
+                            </af:inputText>
+                        </af:column>
+                        <af:column sortProperty="#{bindings.CustomersView1.hints.CustAddress.CountryId.name}"
+                                   filterable="true" sortable="true"
+                                   headerText="#{bindings.CustomersView1.hints.CustAddress.CountryId.label}" id="c14">
+                            <af:inputText value="#{row.CustAddress.bindings.CountryId.inputValue}"
+                                          label="#{bindings.CustomersView1.hints.CustAddress.CountryId.label}"
+                                          required="#{bindings.CustomersView1.hints.CustAddress.CountryId.mandatory}"
+                                          columns="#{bindings.CustomersView1.hints.CustAddress.CountryId.displayWidth}"
+                                          maximumLength="#{bindings.CustomersView1.hints.CustAddress.CountryId.precision}"
+                                          shortDesc="#{bindings.CustomersView1.hints.CustAddress.CountryId.tooltip}"
+                                          rendered="#{row.CustAddress != null}" id="it14">
+                                <f:validator binding="#{row.CustAddress.bindings.CountryId.validator}"/>
+                            </af:inputText>
+                        </af:column>
+                    </af:table>
+                </af:showDetailItem>
+                <af:showDetailItem id="Inventories" text="Inventories">
+                    <af:table value="#{bindings.InventoriesView1.collectionModel}" var="row"
+                              rows="#{bindings.InventoriesView1.rangeSize}"
+                              emptyText="#{bindings.InventoriesView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                              rowBandingInterval="0"
+                              selectedRowKeys="#{bindings.InventoriesView1.collectionModel.selectedRow}"
+                              selectionListener="#{bindings.InventoriesView1.collectionModel.makeCurrent}"
+                              rowSelection="single" fetchSize="#{bindings.InventoriesView1.rangeSize}"
+                              filterModel="#{bindings.InventoriesView1Query.queryDescriptor}" filterVisible="true"
+                              queryListener="#{bindings.InventoriesView1Query.processQuery}" varStatus="vs" id="t2">
+                        <af:column sortProperty="#{bindings.InventoriesView1.hints.ProductId.name}" filterable="true"
+                                   sortable="true" headerText="#{bindings.InventoriesView1.hints.ProductId.label}"
+                                   id="c15">
+                            <af:inputText value="#{row.bindings.ProductId.inputValue}"
+                                          label="#{bindings.InventoriesView1.hints.ProductId.label}"
+                                          required="#{bindings.InventoriesView1.hints.ProductId.mandatory}"
+                                          columns="#{bindings.InventoriesView1.hints.ProductId.displayWidth}"
+                                          maximumLength="#{bindings.InventoriesView1.hints.ProductId.precision}"
+                                          shortDesc="#{bindings.InventoriesView1.hints.ProductId.tooltip}" id="it15">
+                                <f:validator binding="#{row.bindings.ProductId.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.InventoriesView1.hints.ProductId.format}"/>
+                            </af:inputText>
+                        </af:column>
+                        <af:column sortProperty="#{bindings.InventoriesView1.hints.WarehouseId.name}" filterable="true"
+                                   sortable="true" headerText="#{bindings.InventoriesView1.hints.WarehouseId.label}"
+                                   id="c16">
+                            <af:inputText value="#{row.bindings.WarehouseId.inputValue}"
+                                          label="#{bindings.InventoriesView1.hints.WarehouseId.label}"
+                                          required="#{bindings.InventoriesView1.hints.WarehouseId.mandatory}"
+                                          columns="#{bindings.InventoriesView1.hints.WarehouseId.displayWidth}"
+                                          maximumLength="#{bindings.InventoriesView1.hints.WarehouseId.precision}"
+                                          shortDesc="#{bindings.InventoriesView1.hints.WarehouseId.tooltip}" id="it16">
+                                <f:validator binding="#{row.bindings.WarehouseId.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.InventoriesView1.hints.WarehouseId.format}"/>
+                            </af:inputText>
+                        </af:column>
+                        <af:column sortProperty="#{bindings.InventoriesView1.hints.QuantityOnHand.name}"
+                                   filterable="true" sortable="true"
+                                   headerText="#{bindings.InventoriesView1.hints.QuantityOnHand.label}" id="c17">
+                            <af:inputText value="#{row.bindings.QuantityOnHand.inputValue}"
+                                          label="#{bindings.InventoriesView1.hints.QuantityOnHand.label}"
+                                          required="#{bindings.InventoriesView1.hints.QuantityOnHand.mandatory}"
+                                          columns="#{bindings.InventoriesView1.hints.QuantityOnHand.displayWidth}"
+                                          maximumLength="#{bindings.InventoriesView1.hints.QuantityOnHand.precision}"
+                                          shortDesc="#{bindings.InventoriesView1.hints.QuantityOnHand.tooltip}"
+                                          id="it17">
+                                <f:validator binding="#{row.bindings.QuantityOnHand.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.InventoriesView1.hints.QuantityOnHand.format}"/>
+                            </af:inputText>
+                        </af:column>
+                    </af:table>
+                </af:showDetailItem>
+                <af:showDetailItem id="Warehouses" text="Warehouses">
+                    <af:table value="#{bindings.WarehousesView1.collectionModel}" var="row"
+                              rows="#{bindings.WarehousesView1.rangeSize}"
+                              emptyText="#{bindings.WarehousesView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                              rowBandingInterval="0"
+                              selectedRowKeys="#{bindings.WarehousesView1.collectionModel.selectedRow}"
+                              selectionListener="#{bindings.WarehousesView1.collectionModel.makeCurrent}"
+                              rowSelection="single" fetchSize="#{bindings.WarehousesView1.rangeSize}"
+                              filterModel="#{bindings.WarehousesView1Query.queryDescriptor}" filterVisible="true"
+                              queryListener="#{bindings.WarehousesView1Query.processQuery}" varStatus="vs" id="t3">
+                        <af:column sortProperty="#{bindings.WarehousesView1.hints.WarehouseId.name}" filterable="true"
+                                   sortable="true" headerText="#{bindings.WarehousesView1.hints.WarehouseId.label}"
+                                   id="c18">
+                            <af:inputText value="#{row.bindings.WarehouseId.inputValue}"
+                                          label="#{bindings.WarehousesView1.hints.WarehouseId.label}"
+                                          required="#{bindings.WarehousesView1.hints.WarehouseId.mandatory}"
+                                          columns="#{bindings.WarehousesView1.hints.WarehouseId.displayWidth}"
+                                          maximumLength="#{bindings.WarehousesView1.hints.WarehouseId.precision}"
+                                          shortDesc="#{bindings.WarehousesView1.hints.WarehouseId.tooltip}" id="it18">
+                                <f:validator binding="#{row.bindings.WarehouseId.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.WarehousesView1.hints.WarehouseId.format}"/>
+                            </af:inputText>
+                        </af:column>
+                        <af:column sortProperty="#{bindings.WarehousesView1.hints.WarehouseName.name}" filterable="true"
+                                   sortable="true" headerText="#{bindings.WarehousesView1.hints.WarehouseName.label}"
+                                   id="c19">
+                            <af:inputText value="#{row.bindings.WarehouseName.inputValue}"
+                                          label="#{bindings.WarehousesView1.hints.WarehouseName.label}"
+                                          required="#{bindings.WarehousesView1.hints.WarehouseName.mandatory}"
+                                          columns="#{bindings.WarehousesView1.hints.WarehouseName.displayWidth}"
+                                          maximumLength="#{bindings.WarehousesView1.hints.WarehouseName.precision}"
+                                          shortDesc="#{bindings.WarehousesView1.hints.WarehouseName.tooltip}" id="it19">
+                                <f:validator binding="#{row.bindings.WarehouseName.validator}"/>
+                            </af:inputText>
+                        </af:column>
+                        <af:column sortProperty="#{bindings.WarehousesView1.hints.LocationId.name}" filterable="true"
+                                   sortable="true" headerText="#{bindings.WarehousesView1.hints.LocationId.label}"
+                                   id="c20">
+                            <af:inputText value="#{row.bindings.LocationId.inputValue}"
+                                          label="#{bindings.WarehousesView1.hints.LocationId.label}"
+                                          required="#{bindings.WarehousesView1.hints.LocationId.mandatory}"
+                                          columns="#{bindings.WarehousesView1.hints.LocationId.displayWidth}"
+                                          maximumLength="#{bindings.WarehousesView1.hints.LocationId.precision}"
+                                          shortDesc="#{bindings.WarehousesView1.hints.LocationId.tooltip}" id="it20">
+                                <f:validator binding="#{row.bindings.LocationId.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.WarehousesView1.hints.LocationId.format}"/>
+                            </af:inputText>
+                        </af:column>
+                    </af:table>
+                </af:showDetailItem>
+            </af:panelTabbed>
+        </af:form>
+    </af:document>
+</f:view>

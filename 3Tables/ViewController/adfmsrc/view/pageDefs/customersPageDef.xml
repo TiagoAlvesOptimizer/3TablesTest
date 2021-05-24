@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.22.48" id="customersPageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="CustomersView1" RangeSize="25" DataControl="AppModuleDataControl" id="CustomersView1Iterator"/>
+    <searchRegion Binds="CustomersView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="CustomersView1Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="CustomersView1Iterator" id="CustomersView1">
+      <nodeDefinition DefName="model.component.views.CustomersView" Name="CustomersView10">
+        <AttrNames>
+          <Item Value="CustomerId"/>
+          <Item Value="CustFirstName"/>
+          <Item Value="CustLastName"/>
+          <Item Value="PhoneNumbers"/>
+          <Item Value="NlsLanguage"/>
+          <Item Value="NlsTerritory"/>
+          <Item Value="CreditLimit"/>
+          <Item Value="CustEmail"/>
+          <Item Value="AccountMgrId"/>
+        </AttrNames>
+        <Accessors>
+          <Item Value="CustAddress"/>
+        </Accessors>
+      </nodeDefinition>
+      <nodeDefinition DefName="model.component.entities.common.CustAddressTyp">
+        <AttrNames>
+          <Item Value="StreetAddress"/>
+          <Item Value="PostalCode"/>
+          <Item Value="City"/>
+          <Item Value="StateProvince"/>
+          <Item Value="CountryId"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>
