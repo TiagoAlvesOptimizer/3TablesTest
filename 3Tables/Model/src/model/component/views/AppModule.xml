@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE AppModule SYSTEM "jbo_03_01.dtd">
+<!---->
+<AppModule
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="AppModule"
+  Version="12.2.1.22.48"
+  InheritPersonalization="merge"
+  ClearCacheOnRollback="true">
+  <ViewUsage
+    Name="CustomersView1"
+    ViewObjectName="model.component.views.CustomersView"/>
+  <ViewUsage
+    Name="InventoriesView1"
+    ViewObjectName="model.component.views.InventoriesView"/>
+  <ViewUsage
+    Name="WarehousesView1"
+    ViewObjectName="model.component.views.WarehousesView"/>
+  <ViewUsage
+    Name="InventoriesView2"
+    ViewObjectName="model.component.views.InventoriesView"/>
+  <ViewLinkUsage
+    Name="InventoriesWarehousesFkLink1"
+    ViewLinkObjectName="model.component.link.InventoriesWarehousesFkLink"
+    SrcViewUsageName="model.component.views.AppModule.WarehousesView1"
+    DstViewUsageName="model.component.views.AppModule.InventoriesView2"
+    Reversed="false"/>
+</AppModule>
