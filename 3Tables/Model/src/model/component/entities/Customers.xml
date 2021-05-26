@@ -117,6 +117,13 @@
     Type="java.lang.Integer"
     ColumnType="NUMBER"
     TableName="CUSTOMERS"/>
+  <AccessorAttribute
+    Name="Orders"
+    Association="model.component.assoc.CustomersOrdersFkAssoc"
+    AssociationEnd="model.component.assoc.CustomersOrdersFkAssoc.Orders"
+    AssociationOtherEnd="model.component.assoc.CustomersOrdersFkAssoc.Customers"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <Key
     Name="CustFnameNn">
     <DesignTime>

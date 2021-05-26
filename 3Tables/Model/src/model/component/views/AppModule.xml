@@ -19,10 +19,19 @@
   <ViewUsage
     Name="InventoriesView2"
     ViewObjectName="model.component.views.InventoriesView"/>
+  <ViewUsage
+    Name="OrdersView1"
+    ViewObjectName="model.component.views.OrdersView"/>
   <ViewLinkUsage
     Name="InventoriesWarehousesFkLink1"
     ViewLinkObjectName="model.component.link.InventoriesWarehousesFkLink"
     SrcViewUsageName="model.component.views.AppModule.WarehousesView1"
     DstViewUsageName="model.component.views.AppModule.InventoriesView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="CustomersOrdersFkLink1"
+    ViewLinkObjectName="model.component.link.CustomersOrdersFkLink"
+    SrcViewUsageName="model.component.views.AppModule.CustomersView1"
+    DstViewUsageName="model.component.views.AppModule.OrdersView1"
     Reversed="false"/>
 </AppModule>

@@ -4,44 +4,17 @@
   <parameters/>
   <executables>
     <variableIterator id="variables"/>
-    <iterator Binds="CustomersView1" RangeSize="25" DataControl="AppModuleDataControl" id="CustomersView1Iterator"/>
-    <searchRegion Binds="CustomersView1Iterator" Criteria=""
-                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="CustomersView1Query"/>
     <iterator Binds="InventoriesView1" RangeSize="25" DataControl="AppModuleDataControl" id="InventoriesView1Iterator"/>
     <searchRegion Binds="InventoriesView1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="InventoriesView1Query"/>
     <iterator Binds="WarehousesView1" RangeSize="25" DataControl="AppModuleDataControl" id="WarehousesView1Iterator"/>
     <searchRegion Binds="WarehousesView1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="WarehousesView1Query"/>
+    <iterator Binds="CustomersView1" RangeSize="25" DataControl="AppModuleDataControl" id="CustomersView1Iterator"/>
+    <searchRegion Criteria="CustomersViewCriteria" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="CustomersView1Iterator" id="CustomersViewCriteriaQuery"/>
   </executables>
   <bindings>
-    <tree IterBinding="CustomersView1Iterator" id="CustomersView1">
-      <nodeDefinition DefName="model.component.views.CustomersView" Name="CustomersView10">
-        <AttrNames>
-          <Item Value="CustomerId"/>
-          <Item Value="CustFirstName"/>
-          <Item Value="CustLastName"/>
-          <Item Value="PhoneNumbers"/>
-          <Item Value="NlsLanguage"/>
-          <Item Value="NlsTerritory"/>
-          <Item Value="CreditLimit"/>
-          <Item Value="CustEmail"/>
-          <Item Value="AccountMgrId"/>
-        </AttrNames>
-        <Accessors>
-          <Item Value="CustAddress"/>
-        </Accessors>
-      </nodeDefinition>
-      <nodeDefinition DefName="model.component.entities.common.CustAddressTyp">
-        <AttrNames>
-          <Item Value="StreetAddress"/>
-          <Item Value="PostalCode"/>
-          <Item Value="City"/>
-          <Item Value="StateProvince"/>
-          <Item Value="CountryId"/>
-        </AttrNames>
-      </nodeDefinition>
-    </tree>
     <tree IterBinding="InventoriesView1Iterator" id="InventoriesView1">
       <nodeDefinition DefName="model.component.views.InventoriesView" Name="InventoriesView10">
         <AttrNames>
@@ -57,6 +30,48 @@
           <Item Value="WarehouseId"/>
           <Item Value="WarehouseName"/>
           <Item Value="LocationId"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="CustomersView1Iterator" id="CustomersView1">
+      <nodeDefinition DefName="model.component.views.CustomersView" Name="CustomersView10">
+        <AttrNames>
+          <Item Value="CustomerId"/>
+          <Item Value="CustFirstName"/>
+          <Item Value="CustLastName"/>
+          <Item Value="PhoneNumbers"/>
+        </AttrNames>
+        <Accessors>
+          <Item Value="OrdersView"/>
+        </Accessors>
+      </nodeDefinition>
+      <nodeDefinition DefName="model.component.views.OrdersView" Name="CustomersView11">
+        <AttrNames>
+          <Item Value="OrderDate"/>
+          <Item Value="OrderStatus"/>
+          <Item Value="OrderTotal"/>
+          <Item Value="OrderMode"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="CustomersView1Iterator" id="CustomersView12">
+      <nodeDefinition DefName="model.component.views.CustomersView" Name="CustomersView120">
+        <AttrNames>
+          <Item Value="CustomerId"/>
+          <Item Value="CustFirstName"/>
+          <Item Value="CustLastName"/>
+        </AttrNames>
+        <Accessors>
+          <Item Value="OrdersView"/>
+        </Accessors>
+      </nodeDefinition>
+      <nodeDefinition DefName="model.component.views.OrdersView" Name="CustomersView121">
+        <AttrNames>
+          <Item Value="OrderId"/>
+          <Item Value="OrderDate"/>
+          <Item Value="OrderMode"/>
+          <Item Value="OrderStatus"/>
+          <Item Value="OrderTotal"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Association SYSTEM "jbo_03_01.dtd">
+<!---->
+<Association
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="CustomersOrdersFkAssoc"
+  Version="12.2.1.22.48"
+  InheritPersonalization="merge">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <AssociationEnd
+    Name="Customers"
+    Cardinality="1"
+    Source="true"
+    Owner="model.component.entities.Customers"
+    LockLevel="NONE">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_minCardinality" Value="1"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="Customers"/>
+      <Attr Name="_foreignKey" Value="model.component.entities.Customers.CustomersPk"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.component.entities.Customers.CustomerId"/>
+    </AttrArray>
+  </AssociationEnd>
+  <AssociationEnd
+    Name="Orders"
+    Cardinality="-1"
+    Owner="model.component.entities.Orders">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="Orders"/>
+      <Attr Name="_foreignKey" Value="model.component.entities.Orders.fk_Orders"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.component.entities.Orders.CustomerId"/>
+    </AttrArray>
+  </AssociationEnd>
+</Association>
