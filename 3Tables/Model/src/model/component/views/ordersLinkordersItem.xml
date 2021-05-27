@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="ordersLinkordersItem"
+  Version="12.2.1.22.48"
+  InheritPersonalization="merge"
+  EntityAssociation="model.component.assoc.ordersASSOCordersItem">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="model.component.views.ordersLinkordersItem_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <ViewLinkDefEnd
+    Name="OrdersView"
+    Cardinality="1"
+    Source="true"
+    Owner="model.component.views.OrdersView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="OrdersView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.component.views.OrdersView.OrderId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="OrderItemsView"
+    Cardinality="-1"
+    Owner="model.component.views.OrderItemsView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="OrderItemsView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.component.views.OrderItemsView.OrderId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
+</ViewLink>

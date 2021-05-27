@@ -22,6 +22,9 @@
   <ViewUsage
     Name="OrdersView1"
     ViewObjectName="model.component.views.OrdersView"/>
+  <ViewUsage
+    Name="OrderItemsView1"
+    ViewObjectName="model.component.views.OrderItemsView"/>
   <ViewLinkUsage
     Name="InventoriesWarehousesFkLink1"
     ViewLinkObjectName="model.component.link.InventoriesWarehousesFkLink"
@@ -33,5 +36,11 @@
     ViewLinkObjectName="model.component.link.CustomersOrdersFkLink"
     SrcViewUsageName="model.component.views.AppModule.CustomersView1"
     DstViewUsageName="model.component.views.AppModule.OrdersView1"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="ordersLinkordersItem1"
+    ViewLinkObjectName="model.component.views.ordersLinkordersItem"
+    SrcViewUsageName="model.component.views.AppModule.OrdersView1"
+    DstViewUsageName="model.component.views.AppModule.OrderItemsView1"
     Reversed="false"/>
 </AppModule>

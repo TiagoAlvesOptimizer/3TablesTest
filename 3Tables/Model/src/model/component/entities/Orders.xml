@@ -94,6 +94,13 @@
     AssociationOtherEnd="model.component.assoc.CustomersOrdersFkAssoc.Orders"
     Type="oracle.jbo.server.EntityImpl"
     IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="OrderItems"
+    Association="model.component.assoc.ordersASSOCordersItem"
+    AssociationEnd="model.component.assoc.ordersASSOCordersItem.OrderItems"
+    AssociationOtherEnd="model.component.assoc.ordersASSOCordersItem.Orders"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <Key
     Name="OrderCustomerIdNn">
     <DesignTime>

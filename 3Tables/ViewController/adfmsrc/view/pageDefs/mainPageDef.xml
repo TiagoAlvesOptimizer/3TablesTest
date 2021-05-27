@@ -13,6 +13,8 @@
     <iterator Binds="CustomersView1" RangeSize="25" DataControl="AppModuleDataControl" id="CustomersView1Iterator"/>
     <searchRegion Criteria="CustomersViewCriteria" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
                   Binds="CustomersView1Iterator" id="CustomersViewCriteriaQuery"/>
+    <iterator Binds="OrderItemsView1" RangeSize="25" DataControl="AppModuleDataControl" id="OrderItemsView1Iterator"/>
+    <iterator Binds="OrdersView1" RangeSize="25" DataControl="AppModuleDataControl" id="OrdersView1Iterator"/>
   </executables>
   <bindings>
     <tree IterBinding="InventoriesView1Iterator" id="InventoriesView1">
@@ -75,5 +77,48 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
+    <attributeValues IterBinding="OrderItemsView1Iterator" id="ProductId">
+      <AttrNames>
+        <Item Value="ProductId"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="OrdersView1Iterator" id="OrdersView1">
+      <nodeDefinition DefName="model.component.views.OrdersView" Name="OrdersView10">
+        <AttrNames>
+          <Item Value="OrderId"/>
+          <Item Value="OrderDate"/>
+          <Item Value="OrderMode"/>
+          <Item Value="CustomerId"/>
+          <Item Value="OrderStatus"/>
+          <Item Value="OrderTotal"/>
+          <Item Value="SalesRepId"/>
+          <Item Value="PromotionId"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="OrderItemsView1Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="OrderItemsView1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="OrderItemsView1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="OrderItemsView1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+    <attributeValues IterBinding="OrderItemsView1Iterator" id="OrderId">
+      <AttrNames>
+        <Item Value="OrderId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="OrderItemsView1Iterator" id="LineItemId">
+      <AttrNames>
+        <Item Value="LineItemId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="OrderItemsView1Iterator" id="UnitPrice">
+      <AttrNames>
+        <Item Value="UnitPrice"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="OrderItemsView1Iterator" id="Quantity">
+      <AttrNames>
+        <Item Value="Quantity"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

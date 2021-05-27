@@ -67,4 +67,9 @@
     EntityAttrName="PromotionId"
     EntityUsage="Orders"
     AliasName="PROMOTION_ID"/>
+  <ViewLinkAccessor
+    Name="OrderItemsView"
+    ViewLink="model.component.views.ordersLinkordersItem"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
 </ViewObject>
