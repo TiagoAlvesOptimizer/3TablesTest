@@ -26,10 +26,6 @@
   <servlet>
     <servlet-name>adfAuthentication</servlet-name>
     <servlet-class>oracle.adf.share.security.authentication.AuthenticationServlet</servlet-class>
-    <init-param>
-      <param-name>success_url</param-name>
-      <param-value>/faces/main.jsf</param-value>
-    </init-param>
     <load-on-startup>1</load-on-startup>
   </servlet>
   <servlet-mapping>
@@ -190,8 +186,8 @@
   <login-config>
     <auth-method>FORM</auth-method>
     <form-login-config>
-      <form-login-page>/login.jsp</form-login-page>
-      <form-error-page>/error.html</form-error-page>
+      <form-login-page>/faces/login.jsf</form-login-page>
+      <form-error-page>/faces/error.jsf</form-error-page>
     </form-login-config>
   </login-config>
   <security-role>

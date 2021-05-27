@@ -4,6 +4,8 @@
     <af:document title="main.jsf" id="d1">
         <af:messages id="m1"/>
         <af:form id="f1">
+            <af:outputText value="Welcome #{securityContext.userName} !" id="ot16"/>
+            <af:button text="Logout" id="b5" action="#{loginBean.onLogout}"/>
             <af:panelTabbed position="above" id="pt1">
                 <af:showDetailItem id="customers" text="Customers">
                     <af:panelSplitter id="ps1" splitterPosition="500">

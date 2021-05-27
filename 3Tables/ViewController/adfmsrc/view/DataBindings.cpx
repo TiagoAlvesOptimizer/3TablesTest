@@ -2,11 +2,9 @@
 <Application xmlns="http://xmlns.oracle.com/adfm/application" version="12.2.1.22.48" id="DataBindings"
              SeparateXMLFiles="false" Package="view" ClientType="Generic">
   <pageMap>
-    <page path="/customers.jsf" usageId="view_customersPageDef"/>
     <page path="/main.jsf" usageId="view_mainPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
-    <page id="view_customersPageDef" path="view.pageDefs.customersPageDef"/>
     <page id="view_mainPageDef" path="view.pageDefs.mainPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>

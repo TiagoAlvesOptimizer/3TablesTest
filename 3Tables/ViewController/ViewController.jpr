@@ -319,6 +319,10 @@
             <value n="id" v="BC4J Oracle Domains"/>
             <value n="isJDK" v="false"/>
          </hash>
+         <hash>
+            <value n="id" v="WebLogic 12.1 Remote-Client"/>
+            <value n="isJDK" v="false"/>
+         </hash>
       </list>
       <list n="libraryReferences">
          <hash>
@@ -443,6 +447,10 @@
          </hash>
          <hash>
             <value n="id" v="BC4J Oracle Domains"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="WebLogic 12.1 Remote-Client"/>
             <value n="isJDK" v="false"/>
          </hash>
       </list>
@@ -611,5 +619,8 @@
             <value n="version" v="1.1"/>
          </hash>
       </list>
+   </hash>
+   <hash n="ResourceBundleOptions">
+      <list n="RegisteredResourceBundles"/>
    </hash>
 </jpr:project>

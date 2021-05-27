@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <af:document title="login.jsf" id="d1">
+    <af:form id="f1">
+      <af:panelGroupLayout id="pgl1">
+        <af:inputText label="Username" id="it1" value="#{loginBean.username}"/>
+        <af:inputText label="Password:" id="it2" value="#{loginBean.password}" secret="true"/>
+        <af:button text="Login" id="b1" action="#{loginBean.doLogin}"/>
+      </af:panelGroupLayout>
+    </af:form>
+  </af:document>
+</f:view>
