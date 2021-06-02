@@ -7,6 +7,7 @@
         <af:inputText label="Username" id="it1" value="#{loginBean.username}"/>
         <af:inputText label="Password:" id="it2" value="#{loginBean.password}" secret="true"/>
         <af:button text="Login" id="b1" action="#{loginBean.doLogin}"/>
+        <af:link text="Register" id="l1"/>
       </af:panelGroupLayout>
     </af:form>
   </af:document>
